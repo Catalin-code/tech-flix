@@ -5,8 +5,10 @@ import com.codecool.VideoRecommendation.services.VideoRecommendationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class VideoRecommendationController {
 
     @Autowired
@@ -18,7 +20,7 @@ public class VideoRecommendationController {
     }
 
     @GetMapping(value = "/recommendation/{videoId}")
-    public VideoRecommendationDetailsDTO getRecommendationByVideoId(@PathVariable Long videoId){
+    public List<VideoRecommendationDetailsDTO> getRecommendationByVideoId(@PathVariable Long videoId){
         return videoRecommendationService.getByVideoId(videoId);
     }
 }

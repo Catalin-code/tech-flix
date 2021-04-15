@@ -27,4 +27,9 @@ public class VideoController {
     public void addNewVideo(@RequestBody VideoDTO newVideo){
         videoService.addNewVideo(newVideo);
     }
+
+    @GetMapping("/video/{videoId}")
+    public VideoDTO getVideoById(@PathVariable Long videoId){
+        return videoService.getVideoById(videoId);
+    }
 }

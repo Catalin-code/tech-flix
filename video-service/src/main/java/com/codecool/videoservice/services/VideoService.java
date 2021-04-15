@@ -46,6 +46,10 @@ public class VideoService {
         return null;
     }
 
+    public VideoDTO getVideoById(Long videoId){
+        return getVideoDTO(videoRepository.getOne(videoId));
+    }
+
     public VideoDTO getVideoDTO(Video video){
         return new VideoDTO(
                 video.getId().toString(),

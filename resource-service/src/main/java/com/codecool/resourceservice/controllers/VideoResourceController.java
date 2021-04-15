@@ -24,4 +24,8 @@ public class VideoResourceController {
         return videoServiceFeign.getAllVideos();
     }
 
+    @GetMapping("/video/{videoId}")
+    public VideoDTO getVideoById(@PathVariable Long videoId){
+        return videoServiceFeign.getVideoById(videoId);
+    }
 }

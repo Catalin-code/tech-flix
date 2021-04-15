@@ -7,9 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VideoRecommendationService {
@@ -43,8 +45,15 @@ public class VideoRecommendationService {
         );
     }
 
-    public VideoRecommendationDetailsDTO getByVideoId(Long videoId){
-        return getVideoRecommendationDTO(videoRecommendationRepository.getOne(videoId));
+    public List<VideoRecommendationDetailsDTO> getByVideoId(Long videoId){
+        List<VideoRecommendationDetails> recoList = videoRecommendationRepository.findByVideoId(videoId);
+        if(CollectionUtils.isEmpty(recoList)){
+            return null;
+        }
+        return recoList
+                .stream()
+                .map(this::getVideoRecommendationDTO)
+                .collect(Collectors.toList());
     }
 
 

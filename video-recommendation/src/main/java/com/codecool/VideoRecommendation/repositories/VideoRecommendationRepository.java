@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface VideoRecommendationRepository  extends JpaRepository<VideoRecommendationDetails,Long> {
+
     List<VideoRecommendationDetails> findByVideoId(Long videoId);
+
 }

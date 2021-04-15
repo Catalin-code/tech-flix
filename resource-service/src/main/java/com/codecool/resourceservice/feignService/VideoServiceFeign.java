@@ -3,6 +3,7 @@ package com.codecool.resourceservice.feignService;
 import com.codecool.resourceservice.dtos.VideoDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -16,4 +17,7 @@ public interface VideoServiceFeign {
 
     @GetMapping("/videos")
     List<VideoDTO> getAllVideos();
+
+    @GetMapping("/video/{videoId}")
+    VideoDTO getVideoById(@PathVariable Long videoId);
 }

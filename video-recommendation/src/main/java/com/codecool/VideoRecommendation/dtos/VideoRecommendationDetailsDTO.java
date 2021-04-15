@@ -1,19 +1,40 @@
 package com.codecool.VideoRecommendation.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class VideoRecommendationDetailsDTO {
     private String id;
     private String videoId;
     private String recommendation;
+
+    public VideoRecommendationDetailsDTO(String id, String videoId, String recommendation) {
+        this.id = id;
+        this.videoId = videoId;
+        this.recommendation = recommendation;
+    }
+
+    public VideoRecommendationDetailsDTO() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
+
+    public String getRecommendation() {
+        return recommendation;
+    }
+
+    public void setRecommendation(String recommendation) {
+        this.recommendation = recommendation;
+    }
 }
