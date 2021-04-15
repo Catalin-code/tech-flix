@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class VideoRecommendationController {
 
     private final VideoRecommendationService videoRecommendationService;
@@ -15,17 +15,17 @@ public class VideoRecommendationController {
     public VideoRecommendationController(VideoRecommendationService videoRecommendationService){this.videoRecommendationService = videoRecommendationService;}
 
 
-    @GetMapping("recommedations")
+    @GetMapping("/recommendations")
     public List<VideoRecommendation> getAllVideosRecommendations(){
         return videoRecommendationService.getAllVideosRecommendations();
     }
 
-    @GetMapping("recommendation/videoId={videoId}")
+    @GetMapping("/recommendation/videoId={videoId}")
     public List<VideoRecommendation> getVideoRecommendationById(@PathVariable("videoId")String videoId){
         return videoRecommendationService.getVideoRecommendationById(videoId);
     }
 
-    @PostMapping("new-recommendation")
+    @PostMapping("/new-recommendation")
     public void addNewVideoRecommendation(@RequestBody VideoRecommendation newVideoRecommendation){
         videoRecommendationService.addNewVideoRecommendation(newVideoRecommendation);
     }
