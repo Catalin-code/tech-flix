@@ -1,5 +1,6 @@
-package com.codecool.videoservice.Video;
+package com.codecool.videoservice.repositories;
 
+import com.codecool.videoservice.entities.Video;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

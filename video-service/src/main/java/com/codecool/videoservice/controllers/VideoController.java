@@ -1,5 +1,7 @@
-package com.codecool.videoservice.Video;
+package com.codecool.videoservice.controllers;
 
+import com.codecool.videoservice.entities.Video;
+import com.codecool.videoservice.services.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
