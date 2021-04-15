@@ -1,0 +1,41 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: video-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tech-flix
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minIdle: 10
+      idle-timeout: 10000
+      maximumPoolSize: 30
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8661/eureka
+    instance:
+      hostname: localhost
+
+#spring.datasource.url=jdbc:postgresql://localhost:5432/tech-flix
+#spring.datasource.username=postgres
+#spring.datasource.password=123456
+#spring.jpa.hibernate.ddl-auto=create-drop
+#spring.jpa.show-sql=true
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.properties.hibernate.format_sql=true
+
+#server.error.include-message=always
+
+#spring.application.name=video-service
+#server.port=8001
+#eureka.client.service-url.defaultZone-zone=http://localhost:8761/eureka

@@ -1,5 +1,7 @@
-package com.codecool.videoservice.Video;
+package com.codecool.videoservice.services;
 
+import com.codecool.videoservice.entities.Video;
+import com.codecool.videoservice.repositories.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
