@@ -1,11 +1,11 @@
 package com.codecool.videoservice.dtos;
 
-public class VideoDTOS {
+public class VideoDTO {
     private String id;
     private String name;
     private String url;
 
-    public VideoDTOS(String id, String name, String url) {
+    public VideoDTO(String id, String name, String url) {
         this.id = id;
         this.name = name;
         this.url = url;
