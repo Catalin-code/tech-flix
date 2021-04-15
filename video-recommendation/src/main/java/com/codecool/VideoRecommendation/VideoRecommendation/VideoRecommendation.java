@@ -1,4 +1,4 @@
-package com.codecool.VideoRecommendation.dtos;
+package com.codecool.VideoRecommendation.VideoRecommendation;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Entity
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class VideoRecommendationDetailsDTO {
-    private String id;
-    private String videoId;
+public class VideoRecommendation {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private Long videoId;
     private String recommendation;
 }

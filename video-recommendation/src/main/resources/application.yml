@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: video-reco-service
+    name: videoRecommendationService
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
   datasource:
-    url: jdbc:postgresql://localhost:5432/tech-flix-reco
+    url: jdbc:postgresql://localhost:5432/tech-flix
     username:
     password:
     driver-class-name: org.postgresql.Driver
